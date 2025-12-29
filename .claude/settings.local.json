@@ -11,7 +11,8 @@
       "Bash(dir:*)",
       "Bash(robocopy:*)",
       "Bash(xcopy:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run test:*)"
     ]
   }
 }

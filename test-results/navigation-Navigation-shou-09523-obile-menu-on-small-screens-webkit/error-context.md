@@ -1,0 +1,161 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "L" [ref=e4]:
+        - /url: /
+        - generic [ref=e6]: L
+      - button "Toggle menu" [ref=e7]:
+        - img [ref=e8]
+  - generic [ref=e11]:
+    - link "Services" [ref=e12]:
+      - /url: /services
+    - link "About" [ref=e13]:
+      - /url: /about
+    - link "Newsletter" [ref=e14]:
+      - /url: /newsletter
+    - link "Contact" [ref=e15]:
+      - /url: /contact
+    - link "Contact" [ref=e16]:
+      - /url: /contact
+      - generic [ref=e17]: Contact
+  - main [ref=e19]:
+    - generic [ref=e23]:
+      - generic [ref=e27]: L
+      - heading "LIZARDI CONSULTING" [level=1] [ref=e28]
+      - paragraph [ref=e29]: Information, Media & Security Consulting
+      - paragraph [ref=e30]: Protecting your business, data, and reputation in the digital age.
+      - generic [ref=e31]:
+        - link "Initiate Consultation" [ref=e32]:
+          - /url: /contact
+          - generic [ref=e33]: Initiate Consultation
+        - link "View Operations" [ref=e35]:
+          - /url: /services
+          - generic [ref=e36]: View Operations
+      - generic [ref=e37]:
+        - generic [ref=e40]: OPERATIONAL
+        - generic [ref=e41]: 19.37°N, 99.28°W
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e46]: SEC-01
+        - heading "Operations & Services" [level=2] [ref=e48]
+        - paragraph [ref=e49]: Comprehensive solutions for the modern security landscape. From AI implementation to integrated defense systems.
+      - generic [ref=e50]:
+        - generic [ref=e56]:
+          - img [ref=e59]
+          - heading "AI Consulting" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Pragmatic AI strategy and implementation for businesses ready to leverage artificial intelligence.
+          - link "Learn More" [ref=e69]:
+            - /url: /services/ai-consulting
+            - text: Learn More
+            - img [ref=e70]
+        - generic [ref=e77]:
+          - img [ref=e80]
+          - heading "Security Services" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Comprehensive protection across cyber and physical domains for businesses and residences.
+          - link "Learn More" [ref=e84]:
+            - /url: /services/security
+            - text: Learn More
+            - img [ref=e85]
+        - generic [ref=e92]:
+          - img [ref=e95]
+          - heading "Brand Protection" [level=3] [ref=e98]
+          - paragraph [ref=e99]: Reputation defense, crisis communications, and strategic messaging for information resilience.
+          - link "Learn More" [ref=e100]:
+            - /url: /services/brand-protection
+            - text: Learn More
+            - img [ref=e101]
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e108]: SEC-02
+        - heading "Full-Spectrum Protection" [level=2] [ref=e110]
+        - paragraph [ref=e111]: Our flagship Integrated Security offering combines physical premises security, cyber infrastructure protection, and reputation defense into a unified threat assessment and response system.
+        - paragraph [ref=e112]: Unlike siloed security approaches, integrated security recognizes that threats rarely stay in one domain. A physical breach can lead to data theft. A cyber attack can damage your reputation. We protect all three layers simultaneously.
+        - link "Request Briefing" [ref=e113]:
+          - /url: /services/integrated-security
+          - generic [ref=e114]: Request Briefing
+      - generic [ref=e117]:
+        - generic [ref=e119]: PHYSICAL
+        - generic [ref=e121]: CYBER
+        - generic [ref=e123]: REPUTATION
+        - img [ref=e126]
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - generic [ref=e135]: SEC-03
+        - heading "Engineering Rigor Meets Security Expertise" [level=2] [ref=e137]
+        - paragraph [ref=e138]: José Manuel Lizardi brings a unique blend of engineering discipline and security acumen to consulting. With a background in Civil and Chemical Engineering, Business Administration, and experience at GE Vernova working on power plant systems, he approaches security challenges with systematic precision.
+        - paragraph [ref=e139]: Currently pursuing IBM AI Engineering certification, the practice combines traditional security frameworks with cutting-edge AI applications to deliver pragmatic, measurable solutions.
+        - link "Meet the Operator" [ref=e140]:
+          - /url: /about
+          - generic [ref=e141]: Meet the Operator
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - heading "GE Vernova" [level=3] [ref=e146]
+            - generic [ref=e147]: 2022-2024
+          - paragraph [ref=e148]: Power plant systems engineering and operations
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - heading "IBM AI Engineering" [level=3] [ref=e151]
+            - generic [ref=e152]: IN PROGRESS
+          - paragraph [ref=e153]: Professional certification in AI implementation and strategy
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - heading "ISO 9001 Lead Auditor" [level=3] [ref=e156]
+            - generic [ref=e157]: CERTIFIED
+          - paragraph [ref=e158]: Quality management systems and process optimization
+    - generic [ref=e163]:
+      - generic [ref=e166]: SEC-04
+      - heading "Stay Informed" [level=2] [ref=e168]
+      - paragraph [ref=e169]: Subscribe to receive intelligence briefings on AI trends, security insights, and strategic communications. No spam, just actionable intelligence.
+      - link "Subscribe Now" [ref=e171]:
+        - /url: /newsletter
+        - generic [ref=e172]: Subscribe Now
+      - paragraph [ref=e174]: Weekly or bi-weekly updates. Unsubscribe anytime.
+  - contentinfo [ref=e175]:
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - generic [ref=e179]:
+            - generic [ref=e181]: L
+            - generic [ref=e182]: LIZARDI
+          - paragraph [ref=e183]: Information, Media & Security Consulting
+          - generic [ref=e184]: 19.37°N, 99.28°W
+        - generic [ref=e185]:
+          - heading "Navigation" [level=4] [ref=e186]
+          - list [ref=e187]:
+            - listitem [ref=e188]:
+              - link "Home" [ref=e189]:
+                - /url: /
+            - listitem [ref=e190]:
+              - link "Services" [ref=e191]:
+                - /url: /services
+            - listitem [ref=e192]:
+              - link "About" [ref=e193]:
+                - /url: /about
+            - listitem [ref=e194]:
+              - link "Contact" [ref=e195]:
+                - /url: /contact
+            - listitem [ref=e196]:
+              - link "Newsletter" [ref=e197]:
+                - /url: /newsletter
+        - generic [ref=e198]:
+          - heading "Connect" [level=4] [ref=e199]
+          - link "hola@lizardi.mx" [ref=e201]:
+            - /url: mailto:hola@lizardi.mx
+          - generic [ref=e202]:
+            - link "LinkedIn" [ref=e203]:
+              - /url: https://www.linkedin.com/in/josemanuel-lizardi/
+              - img [ref=e204]
+            - link "GitHub" [ref=e208]:
+              - /url: https://github.com/xXMantequillaXx
+              - img [ref=e209]
+      - generic [ref=e212]:
+        - paragraph [ref=e213]: © 2025 Lizardi Consulting. All rights reserved.
+        - paragraph [ref=e214]:
+          - text: Part of
+          - link "Mercalitica" [ref=e215]:
+            - /url: https://www.mercalitica.mx/team
+```

@@ -48,7 +48,7 @@
 
 /* Typing Cursor */
 @keyframes blink {
-  0%, 50% { border-color: theme('colors.electric-cyan'); }
+  0%, 50% { border-color: #00D9FF; }
   51%, 100% { border-color: transparent; }
 }
 
