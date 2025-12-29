@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionContainer from '../../components/common/SectionContainer.astro';
+import Card from '../../components/common/Card.astro';
+import Button from '../../components/common/Button.astro';
+import { services } from '../../data/services';
+import { Brain, Shield, Megaphone, Layers } from 'lucide-react';
+
+const iconMap: Record<string, any> = {
+  Brain,
+  Shield,
+  Megaphone,
+  Layers,
+};
+---
+
+<BaseLayout
+  title="Services"
+  description="Comprehensive security and consulting services. AI consulting, cybersecurity, physical security, brand protection, and integrated security solutions."
+>
+  <!-- Hero -->
+  <SectionContainer class="pt-12">
+    <div class="text-center mb-12">
+      <h1 class="font-display text-4xl md:text-5xl text-signal-white mb-4">
+        Services & Operations
+      </h1>
+      <p class="text-intel-gray text-lg max-w-2xl mx-auto">
+        Comprehensive solutions for the modern security landscape. From AI implementation to integrated defense systems.
+      </p>
+    </div>
+  </SectionContainer>
+
+  <!-- Services Grid -->
+  <SectionContainer class="pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {services.map((service) => {
+        const Icon = iconMap[service.icon];
+        return (
+          <Card class={service.featured ? 'md:col-span-2 border-electric-cyan/50' : ''}>
+            <div class="flex flex-col md:flex-row gap-6">
+              <!-- Icon -->
+              <div class="flex-shrink-0">
+                <div class="inline-flex p-4 bg-electric-cyan/10 rounded-lg">
+                  <Icon className="w-10 h-10 text-electric-cyan" />
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1">
+                {service.featured && (
+                  <div class="mb-3">
+                    <span class="text-electric-cyan text-xs font-mono uppercase tracking-wider">
+                      Flagship Offering
+                    </span>
+                  </div>
+                )}
+
+                <h2 class="font-display text-2xl text-signal-white mb-3">
+                  {service.title}
+                </h2>
+
+                <p class="text-intel-gray mb-6">
+                  {service.description}
+                </p>
+
+                <div class="mb-6">
+                  <h3 class="font-display text-sm text-signal-white uppercase tracking-wider mb-3">
+                    Key Features:
+                  </h3>
+                  <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {service.features.map((feature) => (
+                      <li class="flex items-start gap-2 text-intel-gray text-sm">
+                        <span class="text-electric-cyan mt-1">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Button href={service.href} variant="secondary">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </Card>
+        );
+      })}
+    </div>
+  </SectionContainer>
+
+  <!-- CTA Section -->
+  <SectionContainer class="pb-24 bg-gunmetal/30">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="font-display text-3xl text-signal-white mb-6">
+        Ready to Get Started?
+      </h2>
+      <p class="text-intel-gray mb-8">
+        Contact us to discuss how we can help protect and advance your organization.
+      </p>
+      <Button href="/contact" size="lg">
+        Request Consultation
+      </Button>
+    </div>
+  </SectionContainer>
+</BaseLayout>

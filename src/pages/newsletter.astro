@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionContainer from '../components/common/SectionContainer.astro';
+import NewsletterForm from '../components/newsletter/NewsletterForm.astro';
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="Subscribe to intelligence briefings on AI trends, security insights, and strategic communications."
+>
+  <!-- Hero -->
+  <SectionContainer class="pt-12">
+    <div class="text-center mb-12">
+      <h1 class="font-display text-4xl md:text-5xl text-signal-white mb-4">
+        Intelligence Briefings
+      </h1>
+      <p class="text-intel-gray text-lg">
+        Subscribe to strategic insights
+      </p>
+    </div>
+  </SectionContainer>
+
+  <!-- Newsletter Form -->
+  <SectionContainer class="pb-24">
+    <NewsletterForm />
+  </SectionContainer>
+</BaseLayout>

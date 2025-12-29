@@ -1,0 +1,66 @@
+---
+import { Layers } from 'lucide-react';
+import Button from '../common/Button.astro';
+import SectionContainer from '../common/SectionContainer.astro';
+---
+
+<SectionContainer class="bg-gunmetal/30">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- Content -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-mono text-xs text-electric-cyan tracking-wider">SEC-02</span>
+        <div class="h-px flex-1 bg-electric-cyan/20"></div>
+      </div>
+
+      <h2 class="font-display text-3xl md:text-4xl text-signal-white mb-6">
+        Full-Spectrum Protection
+      </h2>
+
+      <p class="text-intel-gray mb-6 leading-relaxed">
+        Our flagship <span class="text-electric-cyan">Integrated Security</span> offering combines physical premises security, cyber infrastructure protection, and reputation defense into a unified threat assessment and response system.
+      </p>
+
+      <p class="text-intel-gray mb-8 leading-relaxed">
+        Unlike siloed security approaches, integrated security recognizes that threats rarely stay in one domain. A physical breach can lead to data theft. A cyber attack can damage your reputation. We protect all three layers simultaneously.
+      </p>
+
+      <Button href="/services/integrated-security" size="lg">
+        Request Briefing
+      </Button>
+    </div>
+
+    <!-- Visual: Three-Layer Graphic -->
+    <div class="relative">
+      <div class="relative aspect-square max-w-md mx-auto">
+        <!-- Outer Layer: Physical -->
+        <div class="absolute inset-0 border-2 border-electric-cyan/30 rounded-lg flex items-center justify-center">
+          <span class="absolute -top-3 left-4 bg-rich-black px-2 font-mono text-xs text-electric-cyan">
+            PHYSICAL
+          </span>
+        </div>
+
+        <!-- Middle Layer: Cyber -->
+        <div class="absolute inset-8 border-2 border-electric-cyan/50 rounded-lg flex items-center justify-center">
+          <span class="absolute -top-3 left-4 bg-rich-black px-2 font-mono text-xs text-electric-cyan">
+            CYBER
+          </span>
+        </div>
+
+        <!-- Inner Layer: Reputation -->
+        <div class="absolute inset-16 border-2 border-electric-cyan/70 rounded-lg flex items-center justify-center">
+          <span class="absolute -top-3 left-4 bg-rich-black px-2 font-mono text-xs text-electric-cyan">
+            REPUTATION
+          </span>
+        </div>
+
+        <!-- Center Icon -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-electric-cyan/10 p-6 rounded-full">
+            <Layers className="w-12 h-12 text-electric-cyan" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionContainer>

@@ -1,16 +1,19 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import ServicesGrid from '../components/home/ServicesGrid.astro';
+import IntegratedCTA from '../components/home/IntegratedCTA.astro';
+import AboutPreview from '../components/home/AboutPreview.astro';
+import NewsletterCTA from '../components/home/NewsletterCTA.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Home"
+  description="Information, Media & Security Consulting. Protecting your business, data, and reputation in the digital age."
+>
+  <Hero />
+  <ServicesGrid />
+  <IntegratedCTA />
+  <AboutPreview />
+  <NewsletterCTA />
+</BaseLayout>

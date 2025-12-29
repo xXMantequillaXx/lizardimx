@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionContainer from '../components/common/SectionContainer.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+import Card from '../components/common/Card.astro';
+import CoordinateStamp from '../components/common/CoordinateStamp.astro';
+import { social } from '../data/social';
+import { Linkedin, Github, Mail, MapPin, Clock } from 'lucide-react';
+
+const iconMap: Record<string, any> = {
+  Linkedin,
+  Github,
+};
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Lizardi Consulting. Ready to discuss your security needs?"
+>
+  <!-- Hero -->
+  <SectionContainer class="pt-12">
+    <div class="text-center mb-12">
+      <h1 class="font-display text-4xl md:text-5xl text-signal-white mb-4">
+        Initiate Contact
+      </h1>
+      <p class="text-intel-gray text-lg">
+        Ready to discuss your security needs?
+      </p>
+    </div>
+  </SectionContainer>
+
+  <!-- Contact Section -->
+  <SectionContainer class="pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Contact Form (2 columns) -->
+      <div class="lg:col-span-2">
+        <ContactForm />
+      </div>
+
+      <!-- Direct Contact Info (1 column) -->
+      <div class="space-y-6">
+        <!-- Email -->
+        <Card hover={false}>
+          <div class="flex items-start gap-3 mb-4">
+            <Mail className="w-5 h-5 text-electric-cyan mt-1" />
+            <div>
+              <h3 class="font-display text-signal-white text-sm uppercase tracking-wider mb-2">
+                Email
+              </h3>
+              <a
+                href="mailto:hola@lizardi.mx"
+                class="text-intel-gray hover:text-electric-cyan transition-colors"
+              >
+                hola@lizardi.mx
+              </a>
+            </div>
+          </div>
+        </Card>
+
+        <!-- Location -->
+        <Card hover={false}>
+          <div class="flex items-start gap-3 mb-4">
+            <MapPin className="w-5 h-5 text-electric-cyan mt-1" />
+            <div>
+              <h3 class="font-display text-signal-white text-sm uppercase tracking-wider mb-2">
+                Location
+              </h3>
+              <p class="text-intel-gray mb-1">Mexico City</p>
+              <CoordinateStamp />
+            </div>
+          </div>
+        </Card>
+
+        <!-- Response Time -->
+        <Card hover={false}>
+          <div class="flex items-start gap-3 mb-4">
+            <Clock className="w-5 h-5 text-electric-cyan mt-1" />
+            <div>
+              <h3 class="font-display text-signal-white text-sm uppercase tracking-wider mb-2">
+                Response Time
+              </h3>
+              <p class="text-intel-gray">24-48 hours</p>
+            </div>
+          </div>
+        </Card>
+
+        <!-- Social Links -->
+        <Card hover={false}>
+          <h3 class="font-display text-signal-white text-sm uppercase tracking-wider mb-4">
+            Social
+          </h3>
+          <div class="flex gap-4">
+            {social.map((link) => {
+              const Icon = iconMap[link.icon];
+              return (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 text-intel-gray hover:text-electric-cyan transition-colors"
+                  aria-label={link.name}
+                >
+                  <Icon size={20} />
+                  <span class="text-sm">{link.name}</span>
+                </a>
+              );
+            })}
+          </div>
+        </Card>
+      </div>
+    </div>
+  </SectionContainer>
+</BaseLayout>

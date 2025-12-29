@@ -1,0 +1,40 @@
+---
+import Button from '../common/Button.astro';
+import CornerBrackets from '../common/CornerBrackets.astro';
+import SectionContainer from '../common/SectionContainer.astro';
+---
+
+<SectionContainer class="bg-gunmetal/30">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="relative p-8 md:p-12">
+      <!-- Corner Brackets -->
+      <CornerBrackets size="lg" opacity={40} />
+
+      <div class="relative z-10">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="h-px w-16 bg-electric-cyan/20"></div>
+          <span class="font-mono text-xs text-electric-cyan tracking-wider">SEC-04</span>
+          <div class="h-px w-16 bg-electric-cyan/20"></div>
+        </div>
+
+        <h2 class="font-display text-3xl md:text-4xl text-signal-white mb-4">
+          Stay Informed
+        </h2>
+
+        <p class="text-intel-gray mb-8 max-w-xl mx-auto">
+          Subscribe to receive intelligence briefings on AI trends, security insights, and strategic communications. No spam, just actionable intelligence.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <Button href="/newsletter" size="lg" class="w-full sm:w-auto">
+            Subscribe Now
+          </Button>
+        </div>
+
+        <p class="text-muted-steel text-xs mt-6">
+          Weekly or bi-weekly updates. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
+  </div>
+</SectionContainer>

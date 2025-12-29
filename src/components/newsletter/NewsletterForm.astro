@@ -1,0 +1,141 @@
+---
+import Button from '../common/Button.astro';
+import Card from '../common/Card.astro';
+---
+
+<Card class="max-w-2xl mx-auto">
+  <h2 class="font-display text-2xl text-signal-white mb-6">Subscribe to Intelligence Briefings</h2>
+
+  <div class="mb-8">
+    <h3 class="font-display text-lg text-signal-white mb-4">What you'll receive:</h3>
+    <ul class="space-y-3 text-intel-gray">
+      <li class="flex items-start gap-3">
+        <span class="text-electric-cyan mt-1">•</span>
+        <span>AI trends and practical applications</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-electric-cyan mt-1">•</span>
+        <span>Security insights and threat awareness</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-electric-cyan mt-1">•</span>
+        <span>Reputation intelligence</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-electric-cyan mt-1">•</span>
+        <span>Curious Indicators (unique data perspectives)</span>
+      </li>
+    </ul>
+  </div>
+
+  <form id="newsletter-form" class="space-y-6">
+    <!-- Honeypot -->
+    <input type="text" name="bot-field" style="display: none;" tabindex="-1" autocomplete="off" />
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-intel-gray text-sm mb-2 font-display uppercase tracking-wider">
+        Email Address <span class="text-alert-red">*</span>
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full px-4 py-3 bg-rich-black border border-steel-gray/30 focus:border-electric-cyan text-signal-white rounded transition-colors outline-none"
+        placeholder="your.email@example.com"
+      />
+      <span class="error-message text-alert-red text-sm mt-1 hidden" data-error="email"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+      <Button type="submit" size="lg" class="w-full">
+        Subscribe
+      </Button>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="form-success" class="hidden p-4 bg-operational-green/10 border border-operational-green/30 rounded">
+      <p class="text-operational-green text-sm">
+        Successfully subscribed! Check your email for confirmation.
+      </p>
+    </div>
+
+    <div id="form-error" class="hidden p-4 bg-alert-red/10 border border-alert-red/30 rounded">
+      <p class="text-alert-red text-sm">
+        Failed to subscribe. Please try again or contact us at <a href="mailto:hola@lizardi.mx" class="underline">hola@lizardi.mx</a>
+      </p>
+    </div>
+  </form>
+
+  <div class="mt-6 text-center text-muted-steel text-sm">
+    <p>Frequency: Weekly or bi-weekly</p>
+    <p>Unsubscribe anytime.</p>
+  </div>
+</Card>
+
+<script>
+  import { validateEmail, sanitizeInput } from '../../lib/validation';
+
+  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Hide previous messages
+    successMsg?.classList.add('hidden');
+    errorMsg?.classList.add('hidden');
+    document.querySelectorAll('.error-message').forEach(el => el.classList.add('hidden'));
+
+    // Get form data
+    const formData = new FormData(form);
+    const email = sanitizeInput(formData.get('email') as string);
+    const honeypot = formData.get('bot-field') as string;
+
+    // Check honeypot
+    if (honeypot) {
+      console.log('Bot detected');
+      return;
+    }
+
+    // Validate email
+    if (!validateEmail(email)) {
+      const errorEl = document.querySelector('[data-error="email"]');
+      if (errorEl) {
+        errorEl.textContent = 'Please enter a valid email address';
+        errorEl.classList.remove('hidden');
+      }
+      return;
+    }
+
+    // For MVP: Log to console (in production, send to mailing list service)
+    console.log('Newsletter subscription:', { email });
+
+    // Show success message
+    successMsg?.classList.remove('hidden');
+    form.reset();
+
+    // In production, integrate with Beehiiv, Substack, or custom backend:
+    /*
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        successMsg?.classList.remove('hidden');
+        form.reset();
+      } else {
+        errorMsg?.classList.remove('hidden');
+      }
+    } catch (error) {
+      errorMsg?.classList.remove('hidden');
+    }
+    */
+  });
+</script>

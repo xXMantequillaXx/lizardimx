@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionContainer from '../components/common/SectionContainer.astro';
+import Card from '../components/common/Card.astro';
+import Button from '../components/common/Button.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Engineering rigor meets security expertise. Learn about José Manuel Lizardi and Lizardi Consulting."
+>
+  <!-- Hero -->
+  <SectionContainer class="pt-12">
+    <div class="text-center mb-12">
+      <h1 class="font-display text-4xl md:text-5xl text-signal-white mb-4">
+        About Lizardi Consulting
+      </h1>
+      <p class="text-intel-gray text-lg">
+        Engineering rigor meets security expertise
+      </p>
+    </div>
+  </SectionContainer>
+
+  <!-- Main Content -->
+  <SectionContainer class="pb-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-invert max-w-none">
+        <p class="text-intel-gray text-lg leading-relaxed mb-6">
+          Lizardi Consulting brings a unique blend of engineering discipline and security acumen to the consulting space. Founded by <strong class="text-signal-white">José Manuel Lizardi</strong>, the practice combines systematic engineering approaches with deep security expertise to deliver pragmatic, measurable solutions.
+        </p>
+
+        <p class="text-intel-gray text-lg leading-relaxed mb-6">
+          With a background in Civil and Chemical Engineering, Business Administration, and hands-on experience at <strong class="text-signal-white">GE Vernova</strong> working on power plant systems, José brings a methodical approach to solving complex security challenges. This engineering foundation ensures that solutions are not just theoretically sound, but practically implementable.
+        </p>
+
+        <p class="text-intel-gray text-lg leading-relaxed mb-12">
+          Currently pursuing <strong class="text-signal-white">IBM AI Engineering certification</strong>, the practice stays at the forefront of emerging technologies while maintaining a grounded, results-oriented philosophy. As an <strong class="text-signal-white">ISO 9001 Lead Auditor</strong>, quality and continuous improvement are built into every engagement.
+        </p>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <!-- Credentials -->
+  <SectionContainer class="pb-12 bg-tactical-navy/20">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-display text-3xl text-signal-white mb-8 text-center">
+        Credentials & Experience
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- GE Vernova -->
+        <Card>
+          <div class="mb-3">
+            <span class="text-electric-cyan text-xs font-mono">2022-2024</span>
+          </div>
+          <h3 class="font-display text-xl text-signal-white mb-3">
+            GE Vernova
+          </h3>
+          <p class="text-intel-gray text-sm">
+            Power plant systems engineering and operations. Worked on critical infrastructure systems requiring the highest levels of reliability and security.
+          </p>
+        </Card>
+
+        <!-- IBM AI Engineering -->
+        <Card>
+          <div class="mb-3">
+            <span class="text-intel-gold text-xs font-mono">IN PROGRESS</span>
+          </div>
+          <h3 class="font-display text-xl text-signal-white mb-3">
+            IBM AI Engineering
+          </h3>
+          <p class="text-intel-gray text-sm">
+            Professional certification in AI implementation and strategy. Focused on practical applications of AI in business contexts.
+          </p>
+        </Card>
+
+        <!-- ISO 9001 -->
+        <Card>
+          <div class="mb-3">
+            <span class="text-operational-green text-xs font-mono">CERTIFIED</span>
+          </div>
+          <h3 class="font-display text-xl text-signal-white mb-3">
+            ISO 9001 Lead Auditor
+          </h3>
+          <p class="text-intel-gray text-sm">
+            Quality management systems and process optimization. Ensures systematic, auditable approaches to all consulting work.
+          </p>
+        </Card>
+
+        <!-- Education -->
+        <Card>
+          <div class="mb-3">
+            <span class="text-electric-cyan text-xs font-mono">EDUCATION</span>
+          </div>
+          <h3 class="font-display text-xl text-signal-white mb-3">
+            Engineering & Business
+          </h3>
+          <p class="text-intel-gray text-sm">
+            Civil & Chemical Engineering, Business Administration. A multidisciplinary foundation for solving complex problems.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <!-- Philosophy -->
+  <SectionContainer class="pb-12">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-display text-3xl text-signal-white mb-8 text-center">
+        Consulting Philosophy
+      </h2>
+
+      <div class="space-y-6">
+        <Card>
+          <h3 class="font-display text-lg text-signal-white mb-3">
+            Engineering Rigor
+          </h3>
+          <p class="text-intel-gray text-sm">
+            Every recommendation is backed by systematic analysis. No hand-waving, no buzzwords—just clear reasoning and measurable outcomes.
+          </p>
+        </Card>
+
+        <Card>
+          <h3 class="font-display text-lg text-signal-white mb-3">
+            Pragmatic Implementation
+          </h3>
+          <p class="text-intel-gray text-sm">
+            Solutions must work in the real world, with real constraints. Theoretical perfection that can't be executed is worthless.
+          </p>
+        </Card>
+
+        <Card>
+          <h3 class="font-display text-lg text-signal-white mb-3">
+            Continuous Improvement
+          </h3>
+          <p class="text-intel-gray text-sm">
+            Security and technology landscapes evolve constantly. ISO 9001 principles ensure we're always improving processes and outcomes.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <!-- Mercalitica -->
+  <SectionContainer class="pb-24 bg-gunmetal/30">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="font-display text-3xl text-signal-white mb-6">
+        Part of Mercalitica
+      </h2>
+      <p class="text-intel-gray mb-8 max-w-2xl mx-auto">
+        Lizardi Consulting is part of <a href="https://www.mercalitica.mx/team" target="_blank" rel="noopener noreferrer" class="text-electric-cyan hover:underline">Mercalitica</a>, a collective of specialists providing integrated consulting services across technology, security, and business domains.
+      </p>
+      <Button href="/contact" size="lg">
+        Start a Conversation
+      </Button>
+    </div>
+  </SectionContainer>
+</BaseLayout>

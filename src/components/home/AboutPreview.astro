@@ -1,0 +1,70 @@
+---
+import Button from '../common/Button.astro';
+import SectionContainer from '../common/SectionContainer.astro';
+---
+
+<SectionContainer class="bg-tactical-navy/20">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- Text Content -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-mono text-xs text-electric-cyan tracking-wider">SEC-03</span>
+        <div class="h-px flex-1 bg-electric-cyan/20"></div>
+      </div>
+
+      <h2 class="font-display text-3xl md:text-4xl text-signal-white mb-6">
+        Engineering Rigor Meets Security Expertise
+      </h2>
+
+      <p class="text-intel-gray mb-4 leading-relaxed">
+        José Manuel Lizardi brings a unique blend of engineering discipline and security acumen to consulting. With a background in Civil and Chemical Engineering, Business Administration, and experience at GE Vernova working on power plant systems, he approaches security challenges with systematic precision.
+      </p>
+
+      <p class="text-intel-gray mb-6 leading-relaxed">
+        Currently pursuing IBM AI Engineering certification, the practice combines traditional security frameworks with cutting-edge AI applications to deliver pragmatic, measurable solutions.
+      </p>
+
+      <Button href="/about" variant="secondary">
+        Meet the Operator
+      </Button>
+    </div>
+
+    <!-- Credentials -->
+    <div>
+      <div class="space-y-4">
+        <!-- GE Vernova -->
+        <div class="p-6 bg-gunmetal/50 border border-steel-gray/30 rounded">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-display text-signal-white text-lg">GE Vernova</h3>
+            <span class="text-electric-cyan text-xs font-mono">2022-2024</span>
+          </div>
+          <p class="text-intel-gray text-sm">
+            Power plant systems engineering and operations
+          </p>
+        </div>
+
+        <!-- IBM AI Engineering -->
+        <div class="p-6 bg-gunmetal/50 border border-steel-gray/30 rounded">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-display text-signal-white text-lg">IBM AI Engineering</h3>
+            <span class="text-intel-gold text-xs font-mono">IN PROGRESS</span>
+          </div>
+          <p class="text-intel-gray text-sm">
+            Professional certification in AI implementation and strategy
+          </p>
+        </div>
+
+        <!-- ISO 9001 -->
+        <div class="p-6 bg-gunmetal/50 border border-steel-gray/30 rounded">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-display text-signal-white text-lg">ISO 9001 Lead Auditor</h3>
+            <span class="text-operational-green text-xs font-mono">CERTIFIED</span>
+          </div>
+          <p class="text-intel-gray text-sm">
+            Quality management systems and process optimization
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionContainer>
