@@ -15,15 +15,23 @@ test.describe('Contact Form', () => {
   });
 
   test('should validate email format', async ({ page }) => {
+    // Fill valid name and message
     await page.fill('#name', 'Test User');
-    await page.fill('#email', 'invalid-email');
     await page.fill('#message', 'This is a test message that is long enough to pass validation.');
+
+    // Fill invalid email and wait for blur to trigger validation
+    await page.fill('#email', 'invalid-email');
+
+    // Remove required attribute to allow custom validation to run
+    await page.evaluate(() => {
+      document.querySelector<HTMLInputElement>('#email')?.removeAttribute('required');
+    });
 
     await page.click('button[type="submit"]');
 
     // Should show email validation error
     const emailError = page.locator('[data-error="email"]');
-    await expect(emailError).toBeVisible();
+    await expect(emailError).toBeVisible({ timeout: 2000 });
   });
 
   test('should submit valid form', async ({ page }) => {

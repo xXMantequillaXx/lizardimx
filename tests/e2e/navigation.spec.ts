@@ -35,12 +35,19 @@ test.describe('Navigation', () => {
     const menuButton = page.locator('#mobile-menu-toggle');
     await expect(menuButton).toBeVisible();
 
+    // Menu should have 'hidden' class initially (not md:hidden, just 'hidden')
+    const mobileMenu = page.locator('#mobile-menu');
+    const initialClass = await mobileMenu.getAttribute('class');
+    expect(initialClass).toContain('hidden');
+
     // Click to open menu
     await menuButton.click();
 
-    // Menu should be visible
-    const mobileMenu = page.locator('#mobile-menu');
-    await expect(mobileMenu).not.toHaveClass(/hidden/);
+    // Menu should NOT have standalone 'hidden' class anymore
+    const afterClickClass = await mobileMenu.getAttribute('class');
+    // Should still have md:hidden but not standalone hidden
+    expect(afterClickClass).toContain('md:hidden');
+    expect(afterClickClass?.split(' ')).not.toContain('hidden');
   });
 
   test('should have working logo link', async ({ page }) => {

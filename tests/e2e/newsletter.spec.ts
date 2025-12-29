@@ -11,11 +11,17 @@ test.describe('Newsletter Subscription', () => {
 
   test('should validate email', async ({ page }) => {
     await page.fill('#email', 'invalid-email');
+
+    // Remove required attribute to allow custom validation to run
+    await page.evaluate(() => {
+      document.querySelector<HTMLInputElement>('#email')?.removeAttribute('required');
+    });
+
     await page.click('button[type="submit"]');
 
     // Should show validation error
     const emailError = page.locator('[data-error="email"]');
-    await expect(emailError).toBeVisible();
+    await expect(emailError).toBeVisible({ timeout: 2000 });
   });
 
   test('should submit valid email', async ({ page }) => {

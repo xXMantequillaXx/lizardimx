@@ -120,4 +120,17 @@
           - text: Part of
           - link "Mercalitica" [ref=e147]:
             - /url: https://www.mercalitica.mx/team
+  - generic [ref=e150]:
+    - button "Menu" [ref=e151]:
+      - img [ref=e153]
+      - generic: Menu
+    - button "Inspect" [ref=e157]:
+      - img [ref=e159]
+      - generic: Inspect
+    - button "Audit" [ref=e161]:
+      - img [ref=e163]
+      - generic: Audit
+    - button "Settings" [ref=e166]:
+      - img [ref=e168]
+      - generic: Settings
 ```

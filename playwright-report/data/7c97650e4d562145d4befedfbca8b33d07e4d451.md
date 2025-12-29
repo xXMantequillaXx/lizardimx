@@ -158,4 +158,17 @@
           - text: Part of
           - link "Mercalitica" [ref=e217] [cursor=pointer]:
             - /url: https://www.mercalitica.mx/team
+  - generic [ref=e220]:
+    - button "Menu" [ref=e221]:
+      - img [ref=e223]
+      - generic: Menu
+    - button "Inspect" [ref=e227]:
+      - img [ref=e229]
+      - generic: Inspect
+    - button "Audit" [ref=e231]:
+      - img [ref=e233]
+      - generic: Audit
+    - button "Settings" [ref=e236]:
+      - img [ref=e238]
+      - generic: Settings
 ```
