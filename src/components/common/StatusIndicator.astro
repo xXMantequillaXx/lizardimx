@@ -1,0 +1,33 @@
+---
+interface Props {
+  status?: 'operational' | 'standby' | 'alert';
+  class?: string;
+}
+
+const { status = 'operational', class: className = '' } = Astro.props;
+
+const statusConfig = {
+  operational: {
+    color: 'operational-green',
+    text: 'OPERATIONAL',
+  },
+  standby: {
+    color: 'intel-gold',
+    text: 'STANDBY',
+  },
+  alert: {
+    color: 'alert-red',
+    text: 'ALERT',
+  },
+};
+
+const config = statusConfig[status];
+---
+
+<div class:list={['inline-flex items-center gap-2 font-mono text-xs tracking-wider', className]}>
+  <span class:list={[
+    'inline-block w-2 h-2 rounded-full animate-status-pulse',
+    `bg-${config.color}`
+  ]} />
+  <span class={`text-${config.color}`}>{config.text}</span>
+</div>

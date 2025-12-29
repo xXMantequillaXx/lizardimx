@@ -1,0 +1,100 @@
+---
+import { navigation } from '../../data/navigation';
+import { social, mercalitica } from '../../data/social';
+import { Github, Linkedin } from 'lucide-react';
+import CoordinateStamp from '../common/CoordinateStamp.astro';
+
+const iconMap: Record<string, any> = {
+  Github,
+  Linkedin,
+};
+---
+
+<footer class="bg-tactical-navy/50 border-t border-steel-gray/20 mt-auto">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Logo & Description -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-8 w-8 bg-electric-cyan/10 rounded flex items-center justify-center">
+            <span class="font-display font-bold text-electric-cyan">L</span>
+          </div>
+          <span class="font-display font-semibold text-signal-white tracking-wider">
+            LIZARDI
+          </span>
+        </div>
+        <p class="text-intel-gray text-sm mb-4">
+          Information, Media & Security Consulting
+        </p>
+        <CoordinateStamp />
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="font-display text-signal-white text-sm uppercase tracking-wider mb-4">
+          Navigation
+        </h4>
+        <ul class="space-y-2">
+          {navigation.footer.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-intel-gray hover:text-electric-cyan transition-colors text-sm"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div>
+        <h4 class="font-display text-signal-white text-sm uppercase tracking-wider mb-4">
+          Connect
+        </h4>
+        <div class="space-y-3 mb-4">
+          <a
+            href="mailto:hola@lizardi.mx"
+            class="text-intel-gray hover:text-electric-cyan transition-colors text-sm block"
+          >
+            hola@lizardi.mx
+          </a>
+        </div>
+        <div class="flex gap-4">
+          {social.map((link) => {
+            const Icon = iconMap[link.icon];
+            return (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-intel-gray hover:text-electric-cyan transition-colors"
+                aria-label={link.name}
+              >
+                <Icon size={20} />
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-steel-gray/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-intel-gray">
+      <p>
+        &copy; {new Date().getFullYear()} Lizardi Consulting. All rights reserved.
+      </p>
+      <p class="font-mono text-xs">
+        Part of <a
+          href={mercalitica.teamUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-electric-cyan hover:underline"
+        >
+          {mercalitica.name}
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

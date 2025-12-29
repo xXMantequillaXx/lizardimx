@@ -1,0 +1,97 @@
+---
+import { navigation } from '../../data/navigation';
+import Button from '../common/Button.astro';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-rich-black/90 backdrop-blur-sm border-b border-steel-gray/20">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="h-10 w-10 bg-electric-cyan/10 rounded flex items-center justify-center transition-all duration-300 group-hover:bg-electric-cyan/20">
+        <span class="font-display font-bold text-electric-cyan text-lg">L</span>
+      </div>
+      <span class="font-display font-semibold text-signal-white tracking-wider hidden sm:block">
+        LIZARDI
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      {navigation.main.map((link) => (
+        <a
+          href={link.href}
+          class="nav-link text-intel-gray text-sm font-display uppercase tracking-wider hover:text-signal-white transition-colors relative"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="hidden md:block">
+      <Button href="/contact" size="sm">Contact</Button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-toggle"
+      class="md:hidden text-signal-white p-2 hover:text-electric-cyan transition-colors"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu (hidden by default) -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-rich-black/98 hidden md:hidden">
+  <div class="flex flex-col items-center justify-center h-full gap-8">
+    {navigation.main.map((link) => (
+      <a
+        href={link.href}
+        class="text-signal-white text-2xl font-display uppercase tracking-wider hover:text-electric-cyan transition-colors"
+      >
+        {link.label}
+      </a>
+    ))}
+    <Button href="/contact" size="lg" class="mt-8">Contact</Button>
+  </div>
+</div>
+
+<style>
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: theme('colors.electric-cyan');
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    left: 0;
+    width: 100%;
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+  });
+
+  // Close menu when clicking a link
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+  });
+</script>

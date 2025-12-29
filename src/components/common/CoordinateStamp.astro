@@ -1,0 +1,17 @@
+---
+interface Props {
+  lat?: string;
+  lon?: string;
+  class?: string;
+}
+
+const {
+  lat = '19.37°N',
+  lon = '99.28°W',
+  class: className = ''
+} = Astro.props;
+---
+
+<div class:list={['font-mono text-xs text-intel-gray tracking-wider', className]}>
+  {lat}, {lon}
+</div>
