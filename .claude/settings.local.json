@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git branch:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git push:*)",
+      "Bash(npm create astro:*)",
+      "Bash(dir:*)",
+      "Bash(robocopy:*)",
+      "Bash(xcopy:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

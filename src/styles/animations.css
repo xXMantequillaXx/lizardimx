@@ -1,0 +1,75 @@
+/* Scan Line */
+@keyframes scan {
+  0%, 100% {
+    top: 0;
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scan 8s ease-in-out infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(0, 217, 255, 0.2));
+    opacity: 0.9;
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
+    opacity: 1;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Status Pulse */
+@keyframes status-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(57, 255, 20, 0);
+  }
+}
+
+.animate-status-pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* Typing Cursor */
+@keyframes blink {
+  0%, 50% { border-color: theme('colors.electric-cyan'); }
+  51%, 100% { border-color: transparent; }
+}
+
+.animate-typing-cursor {
+  border-right: 2px solid;
+  animation: blink 0.75s step-end infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-scan,
+  .animate-pulse-glow,
+  .animate-status-pulse {
+    animation: none;
+  }
+}
