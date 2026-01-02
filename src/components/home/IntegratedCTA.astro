@@ -4,8 +4,11 @@ import Button from '../common/Button.astro';
 import SectionContainer from '../common/SectionContainer.astro';
 ---
 
-<SectionContainer class="bg-gunmetal/30">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<SectionContainer class="bg-gunmetal/30 overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.08] pointer-events-none" style="background-image: url('/assets/patterns/circuit-network.png'); background-size: 500px 500px; background-repeat: repeat;"></div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
     <!-- Content -->
     <div>
       <div class="flex items-center gap-3 mb-4">
@@ -13,26 +16,26 @@ import SectionContainer from '../common/SectionContainer.astro';
         <div class="h-px flex-1 bg-electric-cyan/20"></div>
       </div>
 
-      <h2 class="font-display text-3xl md:text-4xl text-signal-white mb-6">
+      <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-signal-white mb-4 md:mb-6">
         Full-Spectrum Protection
       </h2>
 
-      <p class="text-intel-gray mb-6 leading-relaxed">
+      <p class="text-intel-gray mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
         Our flagship <span class="text-electric-cyan">Integrated Security</span> offering combines physical premises security, cyber infrastructure protection, and reputation defense into a unified threat assessment and response system.
       </p>
 
-      <p class="text-intel-gray mb-8 leading-relaxed">
+      <p class="text-intel-gray mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
         Unlike siloed security approaches, integrated security recognizes that threats rarely stay in one domain. A physical breach can lead to data theft. A cyber attack can damage your reputation. We protect all three layers simultaneously.
       </p>
 
-      <Button href="/services/integrated-security" size="lg">
+      <Button href="/services/integrated-security" size="lg" class="w-full sm:w-auto">
         Request Briefing
       </Button>
     </div>
 
     <!-- Visual: Three-Layer Graphic -->
-    <div class="relative">
-      <div class="relative aspect-square max-w-md mx-auto">
+    <div class="relative mt-8 lg:mt-0">
+      <div class="relative aspect-square max-w-sm md:max-w-md mx-auto">
         <!-- Outer Layer: Physical -->
         <div class="absolute inset-0 border-2 border-electric-cyan/30 rounded-lg flex items-center justify-center">
           <span class="absolute -top-3 left-4 bg-rich-black px-2 font-mono text-xs text-electric-cyan">

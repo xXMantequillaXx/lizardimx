@@ -28,23 +28,27 @@ const mainServices = [
 ];
 ---
 
-<SectionContainer id="services" class="bg-tactical-navy/20">
+<SectionContainer id="services" class="bg-tactical-navy/20 overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.05] pointer-events-none" style="background-image: url('/assets/patterns/triangle-mesh.png'); background-size: 400px 400px; background-repeat: repeat;"></div>
+
+  <div class="relative z-10">
   <!-- Section Header -->
-  <div class="mb-12">
+  <div class="mb-10 md:mb-12">
     <div class="flex items-center gap-3 mb-4">
       <span class="font-mono text-xs text-electric-cyan tracking-wider">SEC-01</span>
       <div class="h-px flex-1 bg-electric-cyan/20"></div>
     </div>
-    <h2 class="font-display text-3xl md:text-4xl text-signal-white mb-4">
+    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-signal-white mb-3 md:mb-4">
       Operations & Services
     </h2>
-    <p class="text-intel-gray max-w-2xl">
+    <p class="text-intel-gray max-w-2xl text-sm md:text-base leading-relaxed">
       Comprehensive solutions for the modern security landscape. From AI implementation to integrated defense systems.
     </p>
   </div>
 
   <!-- Services Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
     {mainServices.map((service) => {
       const Icon = service.icon;
       return (
@@ -85,5 +89,6 @@ const mainServices = [
         </Card>
       );
     })}
+  </div>
   </div>
 </SectionContainer>
