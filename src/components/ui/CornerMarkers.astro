@@ -1,0 +1,46 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg';
+  thickness?: number;
+  opacity?: number;
+}
+
+const { size = 'md', thickness = 2, opacity = 30 } = Astro.props;
+
+const sizeMap = {
+  sm: 'w-8 h-8',
+  md: 'w-12 h-12',
+  lg: 'w-16 h-16',
+};
+
+const sizeClass = sizeMap[size];
+---
+
+<!-- Top Corners -->
+<div class={`absolute top-0 left-0 ${sizeClass} pointer-events-none`}>
+  <div class={`absolute top-0 left-0 w-full border-t-${thickness} border-l-${thickness} border-electric-cyan/${opacity}`}></div>
+</div>
+<div class={`absolute top-0 right-0 ${sizeClass} pointer-events-none`}>
+  <div class={`absolute top-0 right-0 w-full border-t-${thickness} border-r-${thickness} border-electric-cyan/${opacity}`}></div>
+</div>
+
+<!-- Bottom Corners -->
+<div class={`absolute bottom-0 left-0 ${sizeClass} pointer-events-none`}>
+  <div class={`absolute bottom-0 left-0 w-full border-b-${thickness} border-l-${thickness} border-electric-cyan/${opacity}`}></div>
+</div>
+<div class={`absolute bottom-0 right-0 ${sizeClass} pointer-events-none`}>
+  <div class={`absolute bottom-0 right-0 w-full border-b-${thickness} border-r-${thickness} border-electric-cyan/${opacity}`}></div>
+</div>
+
+<style>
+  /* Force border thickness with exact values */
+  [class*="border-t-2"] { border-top-width: 2px !important; }
+  [class*="border-r-2"] { border-right-width: 2px !important; }
+  [class*="border-b-2"] { border-bottom-width: 2px !important; }
+  [class*="border-l-2"] { border-left-width: 2px !important; }
+  
+  [class*="border-t-3"] { border-top-width: 3px !important; }
+  [class*="border-r-3"] { border-right-width: 3px !important; }
+  [class*="border-b-3"] { border-bottom-width: 3px !important; }
+  [class*="border-l-3"] { border-left-width: 3px !important; }
+</style>

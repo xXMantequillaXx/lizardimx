@@ -2,6 +2,7 @@
 import { Brain, Shield, Megaphone } from 'lucide-react';
 import Card from '../common/Card.astro';
 import SectionContainer from '../common/SectionContainer.astro';
+import CornerMarkers from '../ui/CornerMarkers.astro';
 
 const mainServices = [
   {
@@ -27,19 +28,23 @@ const mainServices = [
 
 <SectionContainer id="services" class="bg-tactical-navy/20 overflow-hidden">
   <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-[0.08] pointer-events-none" style="background-image: url('/assets/patterns/tactical-grid.png'); background-size: 400px 400px; background-repeat: repeat;"></div>
+  <div class="absolute inset-0 opacity-[0.15] pointer-events-none" style="background-image: url('/assets/patterns/tactical-grid.png'); background-size: 400px 400px; background-repeat: repeat;"></div>
+
+  <!-- Corner Markers -->
+  <CornerMarkers size="lg" thickness={3} opacity={40} />
 
   <div class="relative z-10">
   <!-- Section Header -->
-  <div class="mb-10 md:mb-12">
-    <div class="flex items-center gap-3 mb-4">
+  <div class="mb-10 md:mb-12 text-center max-w-3xl mx-auto">
+    <div class="flex items-center justify-center gap-3 mb-4">
+      <div class="h-px w-16 bg-electric-cyan/20"></div>
       <span class="font-mono text-xs text-electric-cyan tracking-wider">SEC-01</span>
-      <div class="h-px flex-1 bg-electric-cyan/20"></div>
+      <div class="h-px w-16 bg-electric-cyan/20"></div>
     </div>
     <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-signal-white mb-3 md:mb-4">
       Operations & Services
     </h2>
-    <p class="text-intel-gray max-w-2xl text-sm md:text-base leading-relaxed">
+    <p class="text-intel-gray text-sm md:text-base leading-relaxed">
       Comprehensive solutions for the modern security landscape. From AI implementation to integrated defense systems.
     </p>
   </div>

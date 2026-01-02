@@ -2,11 +2,15 @@
 import { Layers } from 'lucide-react';
 import Button from '../common/Button.astro';
 import SectionContainer from '../common/SectionContainer.astro';
+import CornerMarkers from '../ui/CornerMarkers.astro';
 ---
 
 <SectionContainer class="bg-gunmetal/30 overflow-hidden">
   <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-[0.08] pointer-events-none" style="background-image: url('/assets/patterns/circuit-network.png'); background-size: 500px 500px; background-repeat: repeat;"></div>
+  <div class="absolute inset-0 opacity-[0.12] pointer-events-none" style="background-image: url('/assets/patterns/circuit-network.png'); background-size: 500px 500px; background-repeat: repeat;"></div>
+
+  <!-- Corner Markers -->
+  <CornerMarkers size="lg" thickness={3} opacity={40} />
 
   <div class="max-w-4xl mx-auto text-center relative z-10">
     <!-- Content -->
@@ -35,8 +39,10 @@ import SectionContainer from '../common/SectionContainer.astro';
     </div>
 
     <!-- Visual: Three-Layer Graphic -->
-    <div class="relative mt-8 lg:mt-0">
+    <div class="relative mt-8 lg:mt-12">
       <div class="relative aspect-square max-w-sm md:max-w-md mx-auto">
+        <!-- Background Pattern for Graphic -->
+        <div class="absolute inset-0 opacity-[0.08] pointer-events-none rounded-lg overflow-hidden" style="background-image: url('/assets/patterns/tactical-grid.png'); background-size: 300px 300px; background-repeat: repeat;"></div>
         <!-- Outer Layer: Physical -->
         <div class="absolute inset-0 border-2 border-electric-cyan/30 rounded-lg flex items-center justify-center">
           <span class="absolute -top-3 left-4 bg-rich-black px-2 font-mono text-xs text-electric-cyan">
