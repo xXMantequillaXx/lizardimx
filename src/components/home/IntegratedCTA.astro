@@ -8,27 +8,28 @@ import SectionContainer from '../common/SectionContainer.astro';
   <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-[0.08] pointer-events-none" style="background-image: url('/assets/patterns/circuit-network.png'); background-size: 500px 500px; background-repeat: repeat;"></div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+  <div class="max-w-4xl mx-auto text-center relative z-10">
     <!-- Content -->
     <div>
-      <div class="flex items-center gap-3 mb-4">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="h-px w-16 bg-electric-cyan/20"></div>
         <span class="font-mono text-xs text-electric-cyan tracking-wider">SEC-02</span>
-        <div class="h-px flex-1 bg-electric-cyan/20"></div>
+        <div class="h-px w-16 bg-electric-cyan/20"></div>
       </div>
 
       <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-signal-white mb-4 md:mb-6">
         Full-Spectrum Protection
       </h2>
 
-      <p class="text-intel-gray mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+      <p class="text-intel-gray mb-4 md:mb-6 leading-relaxed text-sm md:text-base max-w-3xl mx-auto">
         Our flagship <span class="text-electric-cyan">Integrated Security</span> offering combines physical premises security, cyber infrastructure protection, and reputation defense into a unified threat assessment and response system.
       </p>
 
-      <p class="text-intel-gray mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
+      <p class="text-intel-gray mb-6 md:mb-8 leading-relaxed text-sm md:text-base max-w-3xl mx-auto">
         Unlike siloed security approaches, integrated security recognizes that threats rarely stay in one domain. A physical breach can lead to data theft. A cyber attack can damage your reputation. We protect all three layers simultaneously.
       </p>
 
-      <Button href="/services/integrated-security" size="lg" class="w-full sm:w-auto">
+      <Button href="/services/integrated-security" size="lg" class="mx-auto">
         Request Briefing
       </Button>
     </div>

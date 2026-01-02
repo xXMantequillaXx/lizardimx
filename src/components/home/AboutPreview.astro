@@ -5,35 +5,36 @@ import SectionContainer from '../common/SectionContainer.astro';
 
 <SectionContainer class="bg-tactical-navy/20 overflow-hidden">
   <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image: url('/assets/patterns/topo-contour.png'); background-size: 600px 600px; background-repeat: repeat;"></div>
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image: url('/assets/patterns/tactical-grid.png'); background-size: 400px 400px; background-repeat: repeat;"></div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+  <div class="max-w-4xl mx-auto text-center relative z-10">
     <!-- Text Content -->
     <div>
-      <div class="flex items-center gap-3 mb-4">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="h-px w-16 bg-electric-cyan/20"></div>
         <span class="font-mono text-xs text-electric-cyan tracking-wider">SEC-03</span>
-        <div class="h-px flex-1 bg-electric-cyan/20"></div>
+        <div class="h-px w-16 bg-electric-cyan/20"></div>
       </div>
 
       <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-signal-white mb-4 md:mb-6">
         Engineering Rigor Meets Security Expertise
       </h2>
 
-      <p class="text-intel-gray mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
+      <p class="text-intel-gray mb-3 md:mb-4 leading-relaxed text-sm md:text-base max-w-3xl mx-auto">
         José Manuel Lizardi brings a unique blend of engineering discipline and security acumen to consulting. With a background in Civil and Chemical Engineering, Business Administration, and experience at GE Vernova working on power plant systems, he approaches security challenges with systematic precision.
       </p>
 
-      <p class="text-intel-gray mb-6 leading-relaxed text-sm md:text-base">
+      <p class="text-intel-gray mb-6 leading-relaxed text-sm md:text-base max-w-3xl mx-auto">
         Currently pursuing IBM AI Engineering certification, the practice combines traditional security frameworks with cutting-edge AI applications to deliver pragmatic, measurable solutions.
       </p>
 
-      <Button href="/about" variant="secondary" class="w-full sm:w-auto">
+      <Button href="/about" variant="secondary" class="mx-auto">
         Meet the Operator
       </Button>
     </div>
 
     <!-- Credentials -->
-    <div class="mt-8 lg:mt-0">
+    <div class="mt-8 lg:mt-12 max-w-2xl mx-auto">
       <div class="space-y-4 md:space-y-5">
         <!-- GE Vernova -->
         <div class="p-6 bg-gunmetal/50 border border-steel-gray/30 rounded">
